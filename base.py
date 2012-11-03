@@ -55,8 +55,14 @@ def validateInput():
     curBase=int(raw_input("Enter the base of the number(integer):"))
     mapper= createMapper()
     for ch in num:
-        if mapper[ch] > curBase-1:
-            print "You have input a wrong number:"
-            return
+        if ch != '.':
+            if mapper[ch] > curBase-1:
+                print "You have input a wrong number:"
+                return
     newBase=int(raw_input("Enter the base you want to convert into:"))
     print baseConvert(num,curBase,newBase)
+while True:
+    validateInput()
+    repeat = str(raw_input("Enter . to exit and c to continue...."))
+    if repeat == '.':
+        break
